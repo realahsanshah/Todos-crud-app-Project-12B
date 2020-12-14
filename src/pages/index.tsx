@@ -1,5 +1,6 @@
 import * as React from "react"
 import AddTodo from '../components/addTodo'
+import Todos from '../components/Todos'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 
@@ -18,33 +19,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const renderTodos = (todos) => (
-  <ul>
-    {todos.map(todo => (
-      <li key={todo.id}>{todo.title}</li>
-    ))}
-  </ul>
-)
 
 // markup
 const IndexPage = () => {
 
   const classes=useStyles();
-
-  const [todos, setTodos] = React.useState([
-    {
-      id: '123',
-      title: "Get Milk"
-    },
-    {
-      id: '124',
-      title: "Take Med"
-    },
-    {
-      id: '125',
-      title: "Sleep Well"
-    },
-  ])
 
 
 
@@ -53,7 +32,8 @@ const IndexPage = () => {
       <title>Todos</title>
       <h1>Todos</h1>
       <AddTodo />
-      {renderTodos(todos)}
+      <Todos />
+  
     </div>
   )
 }
