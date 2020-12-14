@@ -2,8 +2,6 @@ import * as React from 'react';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField,  Button, Grid} from '@material-ui/core';
-import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
