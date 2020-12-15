@@ -6,6 +6,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Button } from '@material-ui/core';
+import Swal from 'sweetalert2';
 
 const baseURL = ".netlify/functions/faunadb-crud/";
 
@@ -77,6 +78,13 @@ const addTodo = async (title) => {
         body: JSON.stringify({ title })
     });
     console.log(result);
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'A todo is added',
+        showConfirmButton: false,
+        timer: 1500
+      })
     return result;
 }
 
@@ -87,6 +95,13 @@ const deleteTodo = async (id) => {
     })
         .then(res => res.json())
         .then(data => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'A todo is deleted',
+                showConfirmButton: false,
+                timer: 1500
+              })
             return data;
         })
         .catch(err => console.log(err))
@@ -99,6 +114,13 @@ const updateTodo = async (id, title) => {
     })
         .then(res => res.json())
         .then(data => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'A todo is updated',
+                showConfirmButton: false,
+                timer: 1500
+              })
             return data;
         })
         .catch(err => console.log(err))
